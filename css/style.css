@@ -1,0 +1,153 @@
+#logo{
+    width: 475px;
+}
+
+body{
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+    font-family: 'Poppins', serif;
+}
+
+header{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav_links{
+    display:flex;
+    flex-direction:column;
+}
+
+a:visited{
+    /*make the same color after being visited*/
+    color: blue;
+}
+
+.card{
+    flex-basis: 450px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.card > header{
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.pricing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.gallery img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@keyframes move{
+    from {width: 25px;
+        opacity: 0;}
+    to { width:475px;
+        opacity: 1;}
+}
+#logo{
+    animation: move 5s;
+}
+
+@media screen and (min-width: 900px){
+
+    body > header{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        position: sticky;
+        top: 0;
+    }
+
+    nav{
+        width: 100%;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    } 
+
+    #logo{
+        justify-content: flex-start;
+    }
+
+    .card{
+        flex-basis: 250px;
+    }
+
+
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+    }
+  }
+
+  @media print {
+      body{
+        background-image: none;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      nav{
+          width: 100%
+      }
+
+      .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .pricing{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        align-content: space-around;
+      }
+
+      .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+        justify-content:space-around;
+        align-content: space-around;
+      }
+
+      #gallery{
+          display: none;
+      }
+
+      .gallery{
+          display:none;
+      }
+      
+      .card > ul li:nth-child(2):after {
+            content:  "👍";
+    }
+}
+
+ /* Thumbs up emoji code:
+ &#128077; */
